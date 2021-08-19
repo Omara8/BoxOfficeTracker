@@ -17,8 +17,8 @@ class ComingSoonViewModel @Inject constructor(
     val comingSoonRepository: ComingSoonRepository
 ) : ViewModel() {
 
-    fun getComingSoon(): Flow<PagingData<UpcomingResults>> {
-        return comingSoonRepository.getComingSoon()
+    fun getComingSoon(isUSOnly: Boolean): Flow<PagingData<UpcomingResults>> {
+        return comingSoonRepository.getComingSoon(isUSOnly)
             .cachedIn(viewModelScope)
     }
 

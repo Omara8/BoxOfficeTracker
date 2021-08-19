@@ -31,6 +31,15 @@ fun loadImage(imageView: ShapeableImageView, imageUrl: String?) {
     ).into(imageView)
 }
 
+@BindingAdapter("imageUrlW500")
+fun loadImageW500(imageView: ShapeableImageView, imageUrl: String?) {
+    val url = createImageUrlW500(imageUrl)
+    Glide.with(imageView.context).load(url).apply(
+        RequestOptions().placeholder(R.drawable.ic_placeholder_svg)
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+    ).into(imageView)
+}
+
 @BindingAdapter("setAdapter")
 fun RecyclerView.bindRecyclerViewAdapter(adapter: RecyclerView.Adapter<*>?) {
     this.run {

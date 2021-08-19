@@ -46,9 +46,9 @@ class ComingSoonFragment : Fragment() {
         binding?.comingSoonAdapter = comingSoonAdapter
     }
 
-    private fun getComingSoon() {
+    private fun getComingSoon(isUSOnly: Boolean = true) {
         viewLifecycleOwner.lifecycleScope.launch {
-            comingSoonViewModel.getComingSoon().collectLatest {
+            comingSoonViewModel.getComingSoon(isUSOnly).collectLatest {
                 binding?.mainContent?.showContent()
                 comingSoonAdapter?.submitData(it)
             }

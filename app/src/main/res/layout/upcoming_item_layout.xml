@@ -25,9 +25,10 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/upcoming_image"
-                android:layout_width="@dimen/_60dp"
-                android:layout_height="@dimen/_92dp"
-                app:imageUrl="@{item.poster_path}"
+                android:layout_width="@dimen/_108dp"
+                android:layout_height="@dimen/_108dp"
+                android:scaleType="centerCrop"
+                app:imageUrlW500="@{item.poster_path}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

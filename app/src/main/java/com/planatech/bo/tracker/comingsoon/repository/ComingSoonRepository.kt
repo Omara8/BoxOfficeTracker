@@ -11,13 +11,13 @@ import javax.inject.Inject
 
 class ComingSoonRepository @Inject constructor(val comingSoonService: ComingSoonService) {
 
-    fun getComingSoon(): Flow<PagingData<UpcomingResults>> {
+    fun getComingSoon(isUSOnly: Boolean): Flow<PagingData<UpcomingResults>> {
         return Pager(
             config = PagingConfig(
                 pageSize = NETWORK_PAGE_SIZE,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = { ComingSoonPagingSource(comingSoonService) }
+            pagingSourceFactory = { ComingSoonPagingSource(comingSoonService, isUSOnly) }
         ).flow
     }
 

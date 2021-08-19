@@ -35,17 +35,20 @@ android {
     productFlavors{
         def SERVER_URL = "SERVER_URL"
         def IMAGE_URL = "IMAGE_URL"
+        def IMAGE_URL_W500 = "IMAGE_URL_W500"
         def API_KEY = "API_KEY"
         dev {
             applicationId "com.planatech.bo.tracker.dev"
             buildConfigField("String", SERVER_URL, DEV_BASE_URL)
             buildConfigField("String", IMAGE_URL, BASE_IMAGE_URL)
+            buildConfigField("String", IMAGE_URL_W500, BASE_IMAGE_URL_W500)
             buildConfigField("String", API_KEY, DEV_API_KEY)
         }
         prod{
             applicationId "com.planatech.bo.tracker"
             buildConfigField("String", SERVER_URL, PROD_BASE_URL)
             buildConfigField("String", IMAGE_URL, BASE_IMAGE_URL)
+            buildConfigField("String", IMAGE_URL_W500, BASE_IMAGE_URL_W500)
             buildConfigField("String", API_KEY, PROD_API_KEY)
         }
     }

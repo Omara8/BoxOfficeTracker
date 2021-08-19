@@ -5,3 +5,7 @@ import com.planatech.bo.tracker.BuildConfig
 fun createImageUrl(url: String?): String {
     return BuildConfig.IMAGE_URL + url
 }
+
+fun createImageUrlW500(url: String?): String {
+    return BuildConfig.IMAGE_URL_W500 + url
+}

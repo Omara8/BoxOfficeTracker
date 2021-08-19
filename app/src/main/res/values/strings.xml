@@ -4,4 +4,5 @@
     <string name="progressActivityEmptyTitlePlaceholder">Nothing Here</string>
     <string name="progressActivityEmptyContentPlaceholder">We couldn\'t find anything.</string>
     <string name="upcoming">Upcoming</string>
+    <string name="us_only">US Only</string>
 </resources>
