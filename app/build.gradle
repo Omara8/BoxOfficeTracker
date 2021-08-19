@@ -17,11 +17,36 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    hilt {
+        enableExperimentalClasspathAggregation = true
+    }
+    flavorDimensions 'bot'
+    productFlavors{
+        def SERVER_URL = "SERVER_URL"
+        def IMAGE_URL = "IMAGE_URL"
+        def API_KEY = "API_KEY"
+        dev {
+            applicationId "com.planatech.bo.tracker.dev"
+            buildConfigField("String", SERVER_URL, DEV_BASE_URL)
+            buildConfigField("String", IMAGE_URL, BASE_IMAGE_URL)
+            buildConfigField("String", API_KEY, DEV_API_KEY)
+        }
+        prod{
+            applicationId "com.planatech.bo.tracker"
+            buildConfigField("String", SERVER_URL, PROD_BASE_URL)
+            buildConfigField("String", IMAGE_URL, BASE_IMAGE_URL)
+            buildConfigField("String", API_KEY, PROD_API_KEY)
         }
     }
     compileOptions {
@@ -46,4 +71,28 @@ dependencies {
     //hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    //jetpack libraries
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpack_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$jetpack_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    //logging interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_version"
+    //parser
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    //firebase
+    implementation "com.google.firebase:firebase-analytics-ktx:$firebase_analytics_version"
+    implementation "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 }

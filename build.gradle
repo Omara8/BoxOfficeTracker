@@ -9,6 +9,10 @@ buildscript {
     ext.retrofit_version = '2.9.0'
     ext.firebase_analytics_version = '19.0.0'
     ext.firebase_crashlytics_version = '18.2.1'
+    ext.navigation_version = '2.3.5'
+    ext.jetpack_version = "2.3.1"
+    ext.glide_version = "4.11.0"
+    ext.paging_version = "3.0.1"
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"

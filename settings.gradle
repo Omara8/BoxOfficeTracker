@@ -8,4 +8,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Box Office Tracker"
 include ':app'
-include ':skeleton'
