@@ -6,14 +6,14 @@
     app:startDestination="@id/trendingFragment">
 
     <fragment
-        android:id="@+id/comingSoonFragment"
-        android:name="com.planatech.bo.tracker.comingsoon.view.ComingSoonFragment"
-        android:label="fragment_coming_soon" />
-
-    <fragment
         android:id="@+id/trendingFragment"
         android:name="com.planatech.bo.tracker.trending.view.TrendingFragment"
         android:label="fragment_trending"/>
+
+    <fragment
+        android:id="@+id/comingSoonFragment"
+        android:name="com.planatech.bo.tracker.comingsoon.view.ComingSoonFragment"
+        android:label="fragment_coming_soon" />
 
     <fragment
         android:id="@+id/nowPlayingFragment"
