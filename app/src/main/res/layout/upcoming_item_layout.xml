@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.planatech.bo.tracker.comingsoon.model.UpcomingResults" />
+            type="com.planatech.bo.tracker.comingsoon.model.Movie" />
     </data>
 
     <androidx.cardview.widget.CardView

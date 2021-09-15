@@ -1,6 +1,6 @@
 package com.planatech.bo.tracker.comingsoon.service
 
-import com.planatech.bo.tracker.comingsoon.model.Upcoming
+import com.planatech.bo.tracker.comingsoon.model.PagedResultsList
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,7 +13,7 @@ interface ComingSoonService {
         @Query("primary_release_date.lte") endDate: String,
         @Query("sort_by") sortBy: String,
         @Query("with_release_type") releaseType: Int
-    ): Upcoming
+    ): PagedResultsList
 
     @GET("discover/movie")
     suspend fun getComingSoonWithRegion(
@@ -23,5 +23,5 @@ interface ComingSoonService {
         @Query("sort_by") sortBy: String,
         @Query("with_release_type") releaseType: Int,
         @Query("region") region: String
-    ): Upcoming
+    ): PagedResultsList
 }

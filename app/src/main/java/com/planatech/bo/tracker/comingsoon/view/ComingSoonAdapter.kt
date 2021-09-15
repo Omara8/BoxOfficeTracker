@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.planatech.bo.tracker.comingsoon.model.UpcomingResults
+import com.planatech.bo.tracker.comingsoon.model.Movie
 import com.planatech.bo.tracker.databinding.UpcomingItemLayoutBinding
 
-class ComingSoonAdapter(private val itemClickCallback: (item: UpcomingResults) -> Unit) :
-    PagingDataAdapter<UpcomingResults, ComingSoonAdapter.SearchItemsViewHolder>(diffCallBack) {
+class ComingSoonAdapter(private val itemClickCallback: (item: Movie) -> Unit) :
+    PagingDataAdapter<Movie, ComingSoonAdapter.SearchItemsViewHolder>(diffCallBack) {
 
     class SearchItemsViewHolder(val binding: UpcomingItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -31,11 +31,11 @@ class ComingSoonAdapter(private val itemClickCallback: (item: UpcomingResults) -
     }
 
     companion object {
-        private val diffCallBack = object : DiffUtil.ItemCallback<UpcomingResults>() {
-            override fun areItemsTheSame(oldItem: UpcomingResults, newItem: UpcomingResults): Boolean =
+        private val diffCallBack = object : DiffUtil.ItemCallback<Movie>() {
+            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
                 oldItem.id == newItem.id
 
-            override fun areContentsTheSame(oldItem: UpcomingResults, newItem: UpcomingResults): Boolean =
+            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean =
                 oldItem == newItem
         }
     }

@@ -2,7 +2,7 @@ package com.planatech.bo.tracker.comingsoon.model
 
 import java.io.Serializable
 
-data class UpcomingResults (
+data class Movie (
 	val adult : Boolean,
 	val backdrop_path : String,
 	val genre_ids : List<Int>,
